@@ -98,17 +98,43 @@ ViewContent: cuando alguien ve la página del curso
 <!--FIN MAPA DE CALOR-->
 </head>
 <body>
+   <!--POP UPS-->
+<div id="popup" class="popup" style="display: flex;">
+  <div class="popup-content">
+    <!-- Botón de cierre -->
+    <span class="close-btn" id="cerrarPopup">&times;</span>
+    <!-- Imagen optimizada -->
+    <img src="img/popup.png" alt="Curso Playwright" class="popup-img" loading="eager" />
+    <!-- Botón de acción -->
+    <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="popup-btn">¡Inscríbete ahora!</a>
+  </div>
+</div>
+
+<script>
+  // Mostrar popup inmediatamente
+  document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    document.getElementById("popup").style.display = "flex";
+  }, 2000); // espera 2 segundos antes de mostrar el popup
+
+  document.getElementById("cerrarPopup").addEventListener("click", function() {
+    document.getElementById("popup").style.display = "none";
+  });
+});
+
+</script>
+  <!-- FIN POP UPS-->
   <!--NUEVO REALIZAR COMPRA-->
 <div class="barra-precio-fija">
   <div class="bloque-precios">
-    <span class="precio-descuento">S/. 90</span>
-    <span class="precio-original">S/. 180</span>
+    <span class="precio-descuento">$USD 26</span>
+    <span class="precio-original">$USD 52</span>
   </div>
-  <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="btn-cesta">Realizar compra</a>
+  <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="btn-cesta" style="font-size: 15px;">🛒Compra aquí en tu moneda local</a>
 </div>
 <!--FIN-->
 <div class="countdown-wrapper" style="height: 61px; margin-top: -2px; background: linear-gradient(90deg, rgba(106, 27, 154, 0.8), rgba(142, 36, 170, 0.6));">
-  <p class="countdown-label" style="line-height: 1.3; font-size: 14px;font-weight: bold; color: white;">¡ÚLTIMAS VACANTES!</p>
+  <p class="countdown-label" style="line-height: 1.3; font-size: 14px;font-weight: bold; color: white;">¡ÚLTIMAS PLAZAS!</p>
   <div class="countdown-boxes">
     <div class="box red">
       <div class="time" id="days">0</div>
@@ -130,19 +156,21 @@ ViewContent: cuando alguien ve la página del curso
 </div>
 <section class="hero-section" style="padding: 60px 20px; background: linear-gradient(135deg, #0A0A0A, #1C1C1C); color: #fff; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; text-align: left;">
   <div class="hero-text" style="flex: 1 1 500px; max-width: 600px;">
+    <!--HERO INICIO-->
+     <h2 style="font-size: 1.3rem; font-weight: 400; margin-bottom: 12px; color: #E0E0E0;">
+      ¿Quieres pasar de <strong style="color: #00E5FF;">QA Manual</strong> a <strong style="color: #00E5FF;">QA Automation Engineer </strong>y multiplicar tus <strong style="color: #00E5FF;">oportunidades</strong> este 2025?
+    </h2>
+    <br/>
     <h1 style="font-size: 1.9rem; line-height: 1.4; margin-bottom: 16px; font-weight: 700; margin-top: -30px;">
-      Conviértete en un <strong style="color: #FFD700;">QA Automation PRO </strong> y da el salto a un <strong style="color: #FFD700;">mejor</strong> <strong style="color: #FFD700;">SUELDO</strong> 💰
+     Domina <strong style="color: #FFD700;">Playwright</strong> y crea tu propio FRAMEWORK como un <strong style="color: #FFD700;">QA Automation Engineer </strong>Profesional
     </h1>
     <h2 style="font-size: 1.2rem; font-weight: 400; margin-bottom: 12px; color: #E0E0E0;">
-      🚀 Aprende a automatizar pruebas web con con <strong style="color: #00E5FF;">Playwright + TypeScript + Cucumber</strong>, desde cero, con proyectos reales y acompañamiento directo y certificación oficial
+      Aprende <strong style="color: #00E5FF;">Playwright + TypeScript + Cucumber</strong> desde cero y crea proyectos reales listos para producción.
     </h2>
-    <h2 style="font-size: 1.2rem; font-weight: 400; margin-bottom: 12px; color: #E0E0E0;">
-      💻 Curso <strong style="color: #00E5FF;">100% online</strong> Accede desde cualquier lugar y aprende a tu ritmo.
-    </h2>
-    
+    <!--HERO FINAL-->
      <div class="boton-container" style="text-align: left; margin-top: 20px;">
       <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="boton-comprar" style="background: #FF9800; color: #fff; padding: 12px 28px; font-size: 18px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-block;">
-        👉 ¡Quiero inscribirme ahora!
+        ⚡ Quiero subir de nivel ahora
       </a>
     </div>
     <h2 style="font-size: 1.2rem; font-weight: 400; margin-bottom: 25px; color: #E0E0E0; ">
@@ -153,15 +181,16 @@ ViewContent: cuando alguien ve la página del curso
  <!-- Video embebido -->
 <div class="hero-video" style="flex: 1 1 400px; max-width: 860px; margin: 0 auto;">
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
-    <iframe 
-      data-src="https://player.vimeo.com/video/1127379593" 
-      frameborder="0" 
-      allow="autoplay; fullscreen" 
-      allowfullscreen 
-      loading="lazy"
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      title="Video de presentación">
-    </iframe>
+ <iframe 
+  src="https://player.vimeo.com/video/1127379593" 
+  frameborder="0" 
+  allow="autoplay; fullscreen" 
+  allowfullscreen 
+  loading="lazy"
+  fetchpriority="low"
+  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+  title="Video de presentación">
+</iframe>
   </div>
 </div>
 <script>
@@ -192,8 +221,111 @@ ViewContent: cuando alguien ve la página del curso
     <span style="font-size: 15px;">🎥</span> Haz click para ver el video
   </p>
 </div>
-<br/>
-<section style="background-color: #ffffff; padding: 40px 20px; font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: auto;">
+</section>
+<section class="bloque-premium" style="margin-top: 10px;">
+  <div class="premium-badge"><em>🌟 Más de 1,200 estudiantes ya están avanzando en su carrera</em></div>
+  <div class="premium-contenido">
+    <p style="text-align: justify; font-size: 19px;" class="comunidad">
+      Únete a una comunidad activa de testers y desarrolladores que están logrando resultados reales gracias a este curso.
+    </p>
+    <div class="premium-rating">
+      <span class="stars">⭐️<strong>5.0 estrellas</strong> <br><small>Basado en 5,200 valoraciones</small></span>
+      <span class="calificaciones"><strong>+1,200 estudiantes</strong> <br><small>ya aprendiendo con este método</small></span>
+    </div>
+    <br>
+   <div style="display: flex; gap: 24px; font-size: 13px; color: #2d2f31; flex-wrap: wrap;">
+  <p style="margin: 0; margin-top: -10px;">Creado por: <strong> Giancarlo Tirado</strong></p>
+  <p style="margin: 0; margin-top: -10px;">Última actualización: <strong>16/11/2025</strong></p>
+  <p style="margin: 0; margin-top: -10px;">Idioma: <strong>Español</strong></p>
+</div>
+  </div>
+</section>
+<section style="margin-top: -10px;" class="oferta-especial">
+  <div style="position: relative; margin-bottom: 40px; text-align: center;">
+  <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
+    <span style="font-size: 28px; margin-right: 8px;">🎁</span> Oferta especial
+  </h2>
+  <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -10px; width: 60px; height: 4px; background-color: #f39c12; border-radius: 2px;"></div>
+</div>
+  <div class="oferta-contenido">
+    <div class="oferta-video">
+      <img src="img/curso.webp" alt="Vista previa del curso">
+    </div>
+    <div class="oferta-detalles" style="margin-top: -65px;">
+      <p class="precio-actual" style="font-size: 45px;">$USD 26 <span class="precio-original" style="font-size: 36px;">~$USD 52 ~</span></p>
+      <p class="precio-actual" style="font-size: 20px; margin-top: -30px;">O realiza el pago en tu moneda de tu país</p>
+      <img src="img/descuento.webp" class="descuento" style="width: 180px; margin-top: -20px;"></p>
+       <div id="contador">
+    <em style="font-size: 26px;">⏳ La oferta termina en:</em>
+    <div id="tiempo" style="margin-top: 15px;">
+      <span id="horas">02</span>:<span id="minutos">00</span>:<span id="segundos">00</span>
+    </div>
+  </div>
+  </p>
+      <div class="boton-wrapper">
+        <script>
+  function iniciarContador() {
+    let tiempoRestante = 2 * 60 * 60; // 2 horas en segundos
+
+    function actualizarContador() {
+      const horas = Math.floor(tiempoRestante / 3600);
+      const minutos = Math.floor((tiempoRestante % 3600) / 60);
+      const segundos = tiempoRestante % 60;
+
+      document.getElementById("horas").textContent = String(horas).padStart(2, "0");
+      document.getElementById("minutos").textContent = String(minutos).padStart(2, "0");
+      document.getElementById("segundos").textContent = String(segundos).padStart(2, "0");
+
+      if (tiempoRestante > 0) {
+        tiempoRestante--;
+      } else {
+        // Reiniciar contador cuando llegue a 0
+        tiempoRestante = 2 * 60 * 60;
+      }
+    }
+
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+  }
+
+  document.addEventListener("DOMContentLoaded", iniciarContador);
+</script>
+  <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="boton-comprar">🎁 Aprovechar oferta y acceder al curso ahora</a>
+</div>
+
+  <div style="text-align: center;  background-color: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 12px; padding: 25px; margin: 25px auto; max-width: 600px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+  <h3 style="color: #6a1b9a; font-size: 22px; margin-bottom: 15px;font-weight: 1000" >
+    🎁 Bonos exclusivos al inscribirte hoy
+  </h3>
+  <em style="font-weight: 600; color: #1c1d1f; font-size: 19px; text-align: justify;">Además de acceder al curso completo, recibirás <strong>bonos premium</strong> que harán tu aprendizaje más rápido, práctico y profesional.  
+  Estos beneficios están disponibles <strong>solo por tiempo limitado</strong> para nuevos estudiantes.</em>
+  <ul style="list-style: none; padding: 0; margin: 0; text-align: left; display: inline-block; font-size: 17px; line-height: 1.8; margin-top: 20px;">
+    <li style="font-size: 20px;">✅ <strong>Bono #1:</strong> 🏅 Certificado digital.</li>
+    <li style="font-size: 20px;">✅ <strong>Bono #2:</strong> 🧠 Framework listo para usar en tus proyectos.</li>
+    <li style="font-size: 20px;">✅ <strong>Bono #3:</strong> 💬 Acceso a comunidad privada.</li>
+    <li style="font-size: 20px;">✅ <strong>Bono #4:</strong> 💻 Clases grabadas para siempre.</li>
+    <li style="font-size: 20px;">✅ <strong>Bono #4:</strong> 🤝 Acceso a grupo exclusivo de WhatsApp.</li>
+    <li style="font-size: 20px;">✅ <strong>Bono #4:</strong> 🔄 Actualizaciones gratuitas.</li>
+  </ul>
+</div>
+      <p class="urgencia" style="color: black; font-size: 18px;">Garantía de <strong>7 días</strong>!</p>
+      <div class="metodos-pago">
+        <p><strong style="color: #6a1b9a;font-size: 18px; font-weight: 800">Métodos de pago disponibles:</strong></p>
+        <div class="iconos-pago">
+          <img src="img/visa.svg" alt="Visa">
+          <img src="img/klarna.png" alt="klarna">
+          <img src="img/sepa.png" alt="sepa">
+          <img src="img/mastercad.webp" alt="Mastercard">
+          <img src="img/paypal.png" alt="PayPal">
+          <img src="img/gpay.jpg" alt="gpay">
+          <img src="img/pagoefectivo.webp" alt="Pago Efectivo">
+          <img src="img/mercadopago.webp" alt="Pago Efectivo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background-color: #ffffff; padding: 40px 20px; font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: auto;margin-top: 20px;">
  <div style="position: relative; margin-bottom: 40px; text-align: center;">
   <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
     <span style="font-size: 28px; margin-right: 8px;">🧠</span> ¿Por qué este curso es diferente?
@@ -241,112 +373,83 @@ ViewContent: cuando alguien ve la página del curso
 <div class="boton-wrapper">
   <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" style="width: 310px;" class="boton-comprar">Comienza hoy tu camino en automatización 🚀</a>
 </div>
-<section style="margin-top: -1px;" class="requisitos">
-  <div style="position: relative; margin-bottom: 40px; text-align: center;">
+<section style="margin-top: -25px;" class="testimonios">
+ <div style="position: relative; margin-bottom: 40px; text-align: center;">
   <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
-    <span style="font-size: 28px; margin-right: 8px;">🧰</span> Requisitos Previos
+    <span style="font-size: 28px; margin-right: 8px;">🗣️</span> Testimonios de nuestros alumnos
   </h2>
   <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -10px; width: 60px; height: 4px; background-color: #f39c12; border-radius: 2px;"></div>
 </div>
-  <em style="font-weight: 600; color: #1c1d1f;">No necesitas experiencia en automatización para comenzar. Este curso está diseñado para guiarte paso a paso desde cero hasta crear tus propios proyectos profesionales.</em>
-
-  <div class="grid-requisitos" style="margin-top: 19px;">
-    <div class="card-requisitos">
-      <span class="icono">💻</span>
-      <p style="font-size: 19px;">Conocimientos básicos de <strong>JavaScript o TypeScript</strong>.</p>
-    </div>
-    <div class="card-requisitos" style="margin-top: -9px;">
-      <span class="icono">🧪</span>
-      <p style="font-size: 19px;">Nociones de testing manual (no excluyente).</p>
-    </div>
-    <div class="card-requisitos" style="margin-top: -9px;">
-      <span class="icono">🚀</span>
-      <p style="font-size: 19px;">Actitud, curiosidad y ganas de construir proyectos reales.</p>
-    </div>
-  </div>
+  <div class="slider-container">
+    <div class="slider-track">
+      <div class="slide">
+  <img src="img/1.webp" alt="Valentina">
+  <p style="font-size: 18px;"><strong>Valentina</strong> — “Gracias al curso, logré automatizar el flujo de pagos en <em>FintechNova</em>. Ahora soy líder de QA y mi equipo usa Playwright como estándar.”</p>
+</div>
+<div class="slide">
+  <img src="img/6.webp" alt="Diego">
+  <p style="font-size: 18px;"><strong>Diego</strong> — “Entré como trainee en <em>DevSpark</em> y terminé liderando el pipeline de CI/CD. Este curso me dio las herramientas que no enseñan en la universidad.”</p>
+</div>
+<div class="slide">
+  <img src="img/2.webp" alt="Lucía">
+  <p style="font-size: 18px;"><strong>Lucía</strong> — “En <em>RetailFlow</em> necesitábamos automatizar regresiones críticas. Con lo aprendido, reduje el tiempo de testing en un 70% y fui promovida.”</p>
+</div>
+<div class="slide">
+  <img src="img/7.webp" alt="Andrés">
+  <p style="font-size: 18px;"><strong>Andrés</strong> — “Nunca había tocado TypeScript. Hoy en <em>LogiTech QA</em> soy quien define los estándares de automatización. Este curso me cambió la carrera.”</p>
+</div>
+<div class="slide">
+  <img src="img/3.webp" alt="Melissa">
+  <p style="font-size: 18px;"><strong>Melissa</strong> — “En <em>NeoBank Perú</em> necesitábamos pruebas E2E confiables. Lo que aprendí aquí lo implementé en producción y ahora capacito a otros testers.”</p>
+</div>
+<div class="slide">
+  <img src="img/8.webp" alt="Esteban">
+  <p style="font-size: 18px;"><strong>Esteban</strong> — “Pasé de hacer pruebas manuales en <em>DataBridge</em> a automatizar todo el onboarding de usuarios. Este curso me dio visión y herramientas reales.”</p>
+</div>
+<div class="slide">
+  <img src="img/4.webp" alt="Sofía">
+  <p style="font-size: 18px;"><strong>Sofía</strong> — “En <em>AgroTech QA</em> necesitábamos validar formularios complejos. Con Playwright y Cucumber, ahora tenemos cobertura total y cero bugs en producción.”</p>
+</div>
+<div class="slide">
+  <img src="img/9.webp" alt="Martín">
+  <p style="font-size: 18px;"><strong>Martín</strong> — “Gracias a este curso, en <em>Cloudify</em> migramos todo nuestro testing a Playwright. Me convertí en referente interno y ahora doy charlas en meetups.”</p>
+</div>
+<div class="slide">
+  <img src="img/5.webp" alt="Paula">
+  <p style="font-size: 18px;"><strong>Paula</strong> — “Estaba estancada en QA manual. Hoy en <em>SmartQA Solutions</em> lidero el área de automatización. Este curso fue el punto de quiebre.”</p>
+</div>
+<div class="slide">
+  <img src="img/10.webp" alt="Renzo">
+  <p style="font-size: 18px;"><strong>Renzo</strong> — “En <em>TechZen</em> necesitábamos integrar pruebas en GitHub Actions. Lo logré en 3 días gracias al mini curso incluido. Brutal experiencia.”</p>
+</div>
+</div>
+<button class="prev">←</button>
+<button class="next">→</button>
+</div>
 </section>
-<section style="margin-top: -20px;" class="descripcion-curso">
+<br/>
+<br/>
+<br/>
+<section style="margin-top: 180px;" class="descripcion-curso">
  <div style="position: relative; margin-bottom: 40px; text-align: center;">
+  <br/>
   <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
     <span style="font-size: 28px; margin-right: 8px;">📝</span> Descripción del curso
   </h2>
   <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -10px; width: 60px; height: 4px; background-color: #f39c12; border-radius: 2px;"></div>
 </div>
-
   <div class="descripcion-contenido">
     <p style="text-align: justify; font-size: 19px;">
-      Da el salto hacia la <strong>automatización profesional</strong> con las herramientas más potentes del mundo QA: <strong>Playwright, TypeScript y Cucumber</strong>. Este curso te llevará de cero a experto, guiándote paso a paso con proyectos reales y un enfoque 100% práctico.
+      En este curso aprenderás a dominar <strong>Playwright con TypeScript y Cucumber</strong> creando tu propio <strong>framework profesional</strong> paso a paso, desde cero hasta un nivel avanzado. 
     </p>
     <p style="text-align: justify; font-size: 19px;">
-      Aprenderás a crear tu propio <strong>framework de automatización E2E</strong>, desde la instalación inicial hasta la ejecución de pruebas en entornos reales. Nada de copiar y pegar código: aquí construimos como en un equipo profesional de QA Automation.
-    </p>
-    <p><strong style=" font-size: 20px;">A lo largo del curso vas a:</strong></p>
-    <ul class="descripcion-lista" style="font-family: 'Segoe UI', sans-serif; font-size: 20px; color: #2d2f31; list-style: none; padding-left: 0;">
-  <li style="font-size: 17px;">🧾 <strong>Diseñar pruebas automatizadas</strong> utilizando lenguaje Gherkin (Given / When / Then).</li>
-  <li style="font-size: 17px;">🧭 <strong>Controlar múltiples páginas y flujos</strong> con Playwright.</li>
-  <li style="font-size: 17px;">🏗️ <strong>Aplicar principios de arquitectura profesional</strong> a tu framework.</li>
-  <li style="font-size: 17px;">📊 <strong>Automatizar procesos reales</strong> como formularios, navegación y validaciones.</li>
-  <li style="font-size: 17px;">⚙️ <strong>Generar reportes personalizados</strong> para tus ejecuciones y resultados.</li>
-</ul>
-    <p style="text-align: justify; font-size: 19px;">
-      <em >Este no es un curso teórico.</em> Trabajarás con proyectos reales, en una estructura diseñada para que aprendas a resolver los mismos retos que enfrenta un QA Automation en el mundo laboral.
+      Trabajarás con <strong>proyectos reales</strong>, automatizarás escenarios completos, generarás <strong>reportes profesionales</strong>, manejarás buenas prácticas de QA Automation Engineer y aprenderás a resolver los problemas más comunes que enfrentarás en entrevistas y en entornos laborales reales.
     </p>
     <p style="text-align: justify; font-size: 19px;">
-      <strong>Al finalizar, tendrás tu propio framework profesional y la confianza para afrontar proyectos de automatización reales.</strong>
+      Es un curso pensado para que puedas <strong>conseguir tu mejor trabajo</strong>, en QA Automation Engineer o dar el salto a un <strong>nivel senior</strong>, incluso si hoy no tienes experiencia previa con Playwright.
     </p>
-  </div>
 </section>
-<section style="margin-top: -50px;" class="dirigido">
- <div style="position: relative; margin-bottom: 40px; text-align: center;">
-  <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
-    <span style="font-size: 28px; margin-right: 8px;">🎯</span> ¿A quién va dirigido?
-  </h2>
-  <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -10px; width: 60px; height: 4px; background-color: #f39c12; border-radius: 2px;"></div>
-</div>
-  <em style="font-weight: 600; color: #1c1d1f; font-size: 20px; text-align: justify;">No importa en qué etapa estés: este curso está diseñado para acompañarte desde tus primeros pasos hasta crear proyectos profesionales en automatización.</em>
-  <div class="grid-dirigido" style="margin-top: 20px;">
-    <div class="card-dirigido">
-      <span class="icono">🧪</span>
-      <p style="font-size: 19px;"> <strong>QAs manuales</strong> que quieren dar el salto a la automatización profesional.</p>
-    </div>
-    <div class="card-dirigido" style="margin-top: -15px;">
-      <span class="icono">🔍</span>
-      <p style="font-size: 19px;"><strong>Testers</strong> que desean dominar herramientas modernas como Playwright.</p>
-    </div>
-    <div class="card-dirigido" style="margin-top: -15px;">
-      <span class="icono">🧠</span>
-      <p style="font-size: 19px;"><strong>Profesionales de QA</strong> que buscan crear frameworks sólidos desde cero.</p>
-    </div>
-     <div class="card-dirigido" style="margin-top: -15px;">
-      <span class="icono">💻</span>
-      <p style="font-size: 19px;"><strong>Desarrolladores</strong> interesados en integrar testing de interfaz a sus proyectos.</p>
-    </div>
-    <div class="card-dirigido" style="margin-top: -15px;">
-      <span class="icono">🎓</span>
-      <p style="font-size: 18px;"><strong>Estudiantes de programación</strong> que quieren destacar en automatización y conseguir mejores oportunidades.</p>
-    </div>
-  </div>
-      <p style="font-weight: 700; color: #1c1d1f; font-size: 20px;"><em>Si te identificas con alguno de estos perfiles, este curso fue hecho para ti.</em></p>
-</section>
-<section class="bloque-premium" style="margin-top: -40px;">
-  <div class="premium-badge"><em>🌟 Más de 1,200 estudiantes ya están avanzando en su carrera</em></div>
-  <div class="premium-contenido">
-    <p style="text-align: justify; font-size: 19px;">
-      Únete a una comunidad activa de testers y desarrolladores que están logrando resultados reales gracias a este curso.
-    </p>
-    <div class="premium-rating">
-      <span class="stars">⭐️<strong>5.0 estrellas</strong> <br><small>Basado en 5,200 valoraciones</small></span>
-      <span class="calificaciones"><strong>+1,200 estudiantes</strong> <br><small>ya aprendiendo con este método</small></span>
-    </div>
-    <br>
-   <div style="display: flex; gap: 24px; font-size: 13px; color: #2d2f31; flex-wrap: wrap;">
-  <p style="margin: 0; margin-top: -10px;">Creado por: <strong> Giancarlo Tirado</strong></p>
-  <p style="margin: 0; margin-top: -10px;">Última actualización: <strong>22/10/2025</strong></p>
-  <p style="margin: 0; margin-top: -10px;">Idioma: <strong>Español</strong></p>
-</div>
-  </div>
-</section>
-<section style="background-color: #ffffff; padding: 40px 20px; font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: auto;margin-top: 20px;">
+<section style="background-color: #ffffff; padding: 40px 20px; font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: auto;margin-top: -20px;">
  <div style="position: relative; margin-bottom: 40px; text-align: center;">
   <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
     <span style="font-size: 28px; margin-right: 8px;">🧠</span> ¿Qué aprenderás?
@@ -413,9 +516,7 @@ ViewContent: cuando alguien ve la página del curso
     </div>
   </div>
 </section>
-<div class="boton-wrapper">
-  <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" style="width: 310px;" class="boton-comprar">🚀 Domina Playwright y lleva tu carrera QA al siguiente nivel</a>
-</div>
+<br/>
 <section style="margin-top: 14px;" class="modulos-curso">
   <div style="position: relative; margin-bottom: 40px; text-align: center;">
   <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
@@ -607,61 +708,66 @@ ViewContent: cuando alguien ve la página del curso
   </div>
   <!-- Puedes duplicar este bloque para más módulos -->
 </section>
-<section style="margin-top: -25px;" class="testimonios">
+<section style="margin-top: -30px;" class="dirigido">
  <div style="position: relative; margin-bottom: 40px; text-align: center;">
   <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
-    <span style="font-size: 28px; margin-right: 8px;">🗣️</span> Testimonios de alumnos
+    <span style="font-size: 28px; margin-right: 8px;">🎯</span> ¿A quién va dirigido?
   </h2>
   <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -10px; width: 60px; height: 4px; background-color: #f39c12; border-radius: 2px;"></div>
 </div>
-  <div class="slider-container">
-    <div class="slider-track">
-      <div class="slide">
-  <img src="img/1.webp" alt="Valentina">
-  <p style="font-size: 18px;"><strong>Valentina</strong> — “Gracias al curso, logré automatizar el flujo de pagos en <em>FintechNova</em>. Ahora soy líder de QA y mi equipo usa Playwright como estándar.”</p>
-</div>
-<div class="slide">
-  <img src="img/6.webp" alt="Diego">
-  <p style="font-size: 18px;"><strong>Diego</strong> — “Entré como trainee en <em>DevSpark</em> y terminé liderando el pipeline de CI/CD. Este curso me dio las herramientas que no enseñan en la universidad.”</p>
-</div>
-<div class="slide">
-  <img src="img/2.webp" alt="Lucía">
-  <p style="font-size: 18px;"><strong>Lucía</strong> — “En <em>RetailFlow</em> necesitábamos automatizar regresiones críticas. Con lo aprendido, reduje el tiempo de testing en un 70% y fui promovida.”</p>
-</div>
-<div class="slide">
-  <img src="img/7.webp" alt="Andrés">
-  <p style="font-size: 18px;"><strong>Andrés</strong> — “Nunca había tocado TypeScript. Hoy en <em>LogiTech QA</em> soy quien define los estándares de automatización. Este curso me cambió la carrera.”</p>
-</div>
-<div class="slide">
-  <img src="img/3.webp" alt="Melissa">
-  <p style="font-size: 18px;"><strong>Melissa</strong> — “En <em>NeoBank Perú</em> necesitábamos pruebas E2E confiables. Lo que aprendí aquí lo implementé en producción y ahora capacito a otros testers.”</p>
-</div>
-<div class="slide">
-  <img src="img/8.webp" alt="Esteban">
-  <p style="font-size: 18px;"><strong>Esteban</strong> — “Pasé de hacer pruebas manuales en <em>DataBridge</em> a automatizar todo el onboarding de usuarios. Este curso me dio visión y herramientas reales.”</p>
-</div>
-<div class="slide">
-  <img src="img/4.webp" alt="Sofía">
-  <p style="font-size: 18px;"><strong>Sofía</strong> — “En <em>AgroTech QA</em> necesitábamos validar formularios complejos. Con Playwright y Cucumber, ahora tenemos cobertura total y cero bugs en producción.”</p>
-</div>
-<div class="slide">
-  <img src="img/9.webp" alt="Martín">
-  <p style="font-size: 18px;"><strong>Martín</strong> — “Gracias a este curso, en <em>Cloudify</em> migramos todo nuestro testing a Playwright. Me convertí en referente interno y ahora doy charlas en meetups.”</p>
-</div>
-<div class="slide">
-  <img src="img/5.webp" alt="Paula">
-  <p style="font-size: 18px;"><strong>Paula</strong> — “Estaba estancada en QA manual. Hoy en <em>SmartQA Solutions</em> lidero el área de automatización. Este curso fue el punto de quiebre.”</p>
-</div>
-<div class="slide">
-  <img src="img/10.webp" alt="Renzo">
-  <p style="font-size: 18px;"><strong>Renzo</strong> — “En <em>TechZen</em> necesitábamos integrar pruebas en GitHub Actions. Lo logré en 3 días gracias al mini curso incluido. Brutal experiencia.”</p>
-</div>
-</div>
-<button class="prev">←</button>
-<button class="next">→</button>
-</div>
+  <em style="font-weight: 600; color: #1c1d1f; font-size: 20px; text-align: justify;">No importa en qué etapa estés: este curso está diseñado para acompañarte desde tus primeros pasos hasta crear proyectos profesionales en automatización.</em>
+  <div class="grid-dirigido" style="margin-top: 20px;">
+    <div class="card-dirigido">
+      <span class="icono">🧪</span>
+      <p style="font-size: 19px;"> <strong>QAs manuales</strong> que quieren dar el salto a la automatización profesional.</p>
+    </div>
+    <div class="card-dirigido" style="margin-top: -15px;">
+      <span class="icono">🔍</span>
+      <p style="font-size: 19px;"><strong>Testers</strong> que desean dominar herramientas modernas como Playwright.</p>
+    </div>
+    <div class="card-dirigido" style="margin-top: -15px;">
+      <span class="icono">🧠</span>
+      <p style="font-size: 19px;"><strong>Profesionales de QA</strong> que buscan crear frameworks sólidos desde cero.</p>
+    </div>
+     <div class="card-dirigido" style="margin-top: -15px;">
+      <span class="icono">💻</span>
+      <p style="font-size: 19px;"><strong>Desarrolladores</strong> interesados en integrar testing de interfaz a sus proyectos.</p>
+    </div>
+    <div class="card-dirigido" style="margin-top: -15px;">
+      <span class="icono">🎓</span>
+      <p style="font-size: 18px;"><strong>Estudiantes de programación</strong> que quieren destacar en automatización y conseguir mejores oportunidades.</p>
+    </div>
+  </div>
+      <p style="font-weight: 700; color: #1c1d1f; font-size: 20px;"><em>Si te identificas con alguno de estos perfiles, este curso fue hecho para ti.</em></p>
 </section>
-<section style="margin-top: -120px;">
+<div class="boton-wrapper" style="margin-top: -50px;">
+  <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" style="width: 310px;" class="boton-comprar">🚀 Domina Playwright y lleva tu carrera QA al siguiente nivel</a>
+</div>
+<section style="margin-top: -1px;" class="requisitos">
+  <div style="position: relative; margin-bottom: 40px; text-align: center;">
+  <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
+    <span style="font-size: 28px; margin-right: 8px;">🧰</span> Requisitos Previos
+  </h2>
+  <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -10px; width: 60px; height: 4px; background-color: #f39c12; border-radius: 2px;"></div>
+</div>
+  <em style="font-weight: 600; color: #1c1d1f;">No necesitas experiencia en automatización para comenzar. Este curso está diseñado para guiarte paso a paso desde cero hasta crear tus propios proyectos profesionales.</em>
+
+  <div class="grid-requisitos" style="margin-top: 19px;">
+    <div class="card-requisitos">
+      <span class="icono">💻</span>
+      <p style="font-size: 19px;">Conocimientos básicos de <strong>JavaScript o TypeScript</strong>.</p>
+    </div>
+    <div class="card-requisitos" style="margin-top: -9px;">
+      <span class="icono">🧪</span>
+      <p style="font-size: 19px;">Nociones de testing manual (no excluyente).</p>
+    </div>
+    <div class="card-requisitos" style="margin-top: -9px;">
+      <span class="icono">🚀</span>
+      <p style="font-size: 19px;">Actitud, curiosidad y ganas de construir proyectos reales.</p>
+    </div>
+  </div>
+</section>
+<section style="margin-top: -60px;">
    <div style="position: relative; margin-bottom: 40px; text-align: center;">
   <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
     <span style="font-size: 28px; margin-right: 8px;">👨‍🏫</span> Conoce a tu INSTRUCTOR
@@ -671,24 +777,23 @@ ViewContent: cuando alguien ve la página del curso
 </section>
 <section class="docente-info" style="margin-top: -10px;">
   <div class="docente-foto">
-    <img src="img/Giancarlo.webp" style="height: 300px; width: 300px;" alt="Locos, QA Automation Lead">
+    <img src="img/Giancarlo.webp" style="height: 300px; width: 300px;" alt="QA Automation Lead">
   </div>
   <div class="docente-texto" style="margin-top: -30px;">
   <p style="text-align: justify; font-size: 23px;"><strong>Instructor del curso:</strong> Giancarlo Tirado 
     <br/>
-    <span class="icono">🎓</span><strong style="font-size: 21px;">Ingeniero Informático especializado en QA Automation</strong>, con más de 5 años de experiencia liderando procesos de automatización en entidades financieras y tecnológicas de alto nivel.</p>
+    <span class="icono">🎓</span><strong style="font-size: 21px;">Soy Ingeniero Informático especializado en QA Automation Engineer</strong>, con más de 5 años de experiencia liderando procesos de automatización en entidades financieras y tecnológicas de alto nivel.</p>
     <span style="text-align: justify;"></span>
-    <p style="text-align: justify; font-size: 21px;"></span>He vivido el mismo camino que tú: comencé como QA manual y descubrí el poder de la automatización para llevar mi carrera a otro nivel. Hoy, aplico frameworks profesionales en proyectos reales, garantizando calidad, precisión y eficiencia en cada entrega.</p>
-    <p style="text-align: justify; font-size: 21px;"><span class="icono">🛠️</span>Mi dominio técnico incluye herramientas clave como <strong>Playwright, Selenium WebDriver, Java, Cucumber, Jira XRAY, Bitbucket, Git</strong> e integración continua con CI/CD. Automatizar APIs y entornos web forma parte de mi día a día.</p>
+    <p style="text-align: justify; font-size: 21px;"></span>Pasé por el mismo camino que tú: comencé como <strong>QA Manual</strong> y descubrí como la automatización para llevar mi carrera a otro nivel. Hoy aplico frameworks profesionales en proyectos reales, garantizando calidad, eficiencia y entregas a nivel empresarial.</p>
+    <p style="text-align: justify; font-size: 21px;"><span class="icono">🛠️</span>Mi dominio técnico incluye herramientas como <strong>Playwright, Selenium WebDriver, Java, Cucumber, Jira XRAY, Bitbucket, Git</strong> e integración continua con CI/CD, y automatización de APIs y entornos web.</p>
   <p style="font-size: 22px;"><strong>En este curso, no solo te enseño a usar Playwright:</strong></p>
   <ul class="docente-lista">
     <li style="font-size: 20px;"><span class="icono">🚀</span><strong>Construirás tu propio framework E2E </strong> profesional desde cero.</li>
-    <li style="font-size: 20px;"><span class="icono">🧠</span><strong style="text-align: justify;">Aprenderás a automatizar como se hace en equipos reales</strong> de desarrollo.</li>
+    <li style="font-size: 20px;"><span class="icono">🧠</span><strong style="text-align: justify;">Aprenderás a automatizar como se hace en equipos reales.</strong></li>
     <li style="font-size: 20px;"><span class="icono">📈</span><strong>Aplicarás estrategias de testing</strong> que garantizan productos de alta calidad.</li>
   </ul>
-
-  <p style="text-align: justify; font-size: 21px;"><span class="icono">🔥</span>Mi enfoque combina <strong>arquitectura técnica, desarrollo de software y experiencia en calidad</strong>.  
-  Si estás listo para aprender con alguien que lo aplica en el mundo real, este curso es para ti.</p>
+  <p style="text-align: justify; font-size: 21px;"><span class="icono">🔥</span>Mi enfoque combina <strong>arquitectura técnica, desarrollo de software y experiencia en proyectos reales</strong>.  
+  Si estás listo para aprender con alguien que lo aplica en el mundo real, te voy a llevar paso a paso hasta convertirte en QA Automation Engineer profesional.</p>
 </div>
 </section>
 <section style="margin-top: -60px;" class="certificacion-curso">
@@ -698,7 +803,6 @@ ViewContent: cuando alguien ve la página del curso
   </h2>
   <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -10px; width: 60px; height: 4px; background-color: #f39c12; border-radius: 2px;"></div>
 </div>
-
   <div style="font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: auto;">
   <!-- Intro -->
   <div style="margin-bottom: 32px;">
@@ -741,150 +845,11 @@ ViewContent: cuando alguien ve la página del curso
   </div>
   <!-- Imagen del certificado -->
   <div style="text-align: center;">
-    <img src="img/certificado_1.png" alt="certificado del curso" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <img src="img/certificado_1.webp" alt="certificado del curso" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   </div>
 </div>
 </section>
-<section style="margin-top: -40px;" class="oferta-especial">
-  <div style="position: relative; margin-bottom: 40px; text-align: center;">
-  <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
-    <span style="font-size: 28px; margin-right: 8px;">🎁</span> Oferta especial
-  </h2>
-  <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -10px; width: 60px; height: 4px; background-color: #f39c12; border-radius: 2px;"></div>
-</div>
-  <div class="oferta-contenido">
-    <div class="oferta-video">
-      <img src="img/curso.png" alt="Vista previa del curso">
-    </div>
-    <div class="oferta-detalles" style="margin-top: -65px;">
-      <p class="precio-actual" style="font-size: 45px;">S/. 90 (Págalo en tu Moneda Local)<span class="precio-original" style="font-size: 36px;">~S/. 180~</span></p>
-      <img src="img/descuento.png" class="descuento" style="width: 180px; margin-top: -20px;"></p>
-       <div id="contador">
-    <em style="font-size: 26px;">⏳ La oferta termina en:</em>
-    <div id="tiempo" style="margin-top: 15px;">
-      <span id="horas">02</span>:<span id="minutos">00</span>:<span id="segundos">00</span>
-    </div>
-  </div>
-  </p>
-      <div class="boton-wrapper">
-        <script>
-  function iniciarContador() {
-    let tiempoRestante = 2 * 60 * 60; // 2 horas en segundos
-
-    function actualizarContador() {
-      const horas = Math.floor(tiempoRestante / 3600);
-      const minutos = Math.floor((tiempoRestante % 3600) / 60);
-      const segundos = tiempoRestante % 60;
-
-      document.getElementById("horas").textContent = String(horas).padStart(2, "0");
-      document.getElementById("minutos").textContent = String(minutos).padStart(2, "0");
-      document.getElementById("segundos").textContent = String(segundos).padStart(2, "0");
-
-      if (tiempoRestante > 0) {
-        tiempoRestante--;
-      } else {
-        // Reiniciar contador cuando llegue a 0
-        tiempoRestante = 2 * 60 * 60;
-      }
-    }
-
-    actualizarContador();
-    setInterval(actualizarContador, 1000);
-  }
-
-  document.addEventListener("DOMContentLoaded", iniciarContador);
-</script>
-  <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="boton-comprar">🎁 Aprovechar oferta y acceder al curso ahora</a>
-</div>
-
-  <div style="text-align: center;  background-color: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 12px; padding: 25px; margin: 25px auto; max-width: 600px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
-  <h3 style="color: #6a1b9a; font-size: 22px; margin-bottom: 15px;font-weight: 1000" >
-    🎁 Bonos exclusivos al inscribirte hoy
-  </h3>
-  <em style="font-weight: 600; color: #1c1d1f; font-size: 19px; text-align: justify;">Además de acceder al curso completo, recibirás <strong>bonos premium</strong> que harán tu aprendizaje más rápido, práctico y profesional.  
-  Estos beneficios están disponibles <strong>solo por tiempo limitado</strong> para nuevos estudiantes.</em>
-  <ul style="list-style: none; padding: 0; margin: 0; text-align: left; display: inline-block; font-size: 17px; line-height: 1.8; margin-top: 20px;">
-    <li style="font-size: 20px;">✅ <strong>Bono #1:</strong> 🏅 Certificado digital.</li>
-    <li style="font-size: 20px;">✅ <strong>Bono #2:</strong> 🧠 Framework listo para usar en tus proyectos.</li>
-    <li style="font-size: 20px;">✅ <strong>Bono #3:</strong> 💬 Acceso a comunidad privada.</li>
-    <li style="font-size: 20px;">✅ <strong>Bono #4:</strong> 💻 Clases grabadas para siempre.</li>
-    <li style="font-size: 20px;">✅ <strong>Bono #4:</strong> 🤝 Acceso a grupo exclusivo de WhatsApp.</li>
-    <li style="font-size: 20px;">✅ <strong>Bono #4:</strong> 🔄 Actualizaciones gratuitas.</li>
-  </ul>
-</div>
-      <p class="urgencia" style="color: black; font-size: 18px;">Garantía de <strong>7 días</strong>!</p>
-      <div class="metodos-pago">
-        <p><strong style="color: #6a1b9a;font-size: 18px; font-weight: 800">Métodos de pago disponibles:</strong></p>
-        <div class="iconos-pago">
-          <img src="img/visa.svg" alt="Visa">
-          <img src="img/mastercad.webp" alt="Mastercard">
-          <img src="img/paypal.png" alt="PayPal">
-          <img src="img/yape.png" alt="Yape">
-          <img src="img/pagoefectivo.webp" alt="Pago Efectivo">
-          <img src="img/mercadopago.webp" alt="Pago Efectivo">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="modal-overlay" id="videoModal">
-  <div class="modal-content">
-    <span class="modal-close" id="closeModal">✖</span>
-    <iframe id="modalVideo" src="" allowfullscreen></iframe>
-  </div>
-</div>
-
-<script>
-document.querySelectorAll(".modulo-titulo").forEach(button => {
-  button.addEventListener("click", () => {
-    const lecciones = button.nextElementSibling;
-    const isOpen = lecciones.style.display === "block";
-    document.querySelectorAll(".modulo-lecciones").forEach(ul => ul.style.display = "none");
-    if (!isOpen) {
-      lecciones.style.display = "block";
-    }
-  });
-});
-</script>
-<script>
-document.querySelectorAll(".vista-previa").forEach(link => {
-  link.addEventListener("click", function(e) {
-    e.preventDefault();
-    const videoUrl = this.getAttribute("data-video");
-    document.getElementById("modalVideo").src = videoUrl;
-    document.getElementById("videoModal").style.display = "flex";
-  });
-});
-
-document.getElementById("closeModal").addEventListener("click", function() {
-  document.getElementById("videoModal").style.display = "none";
-  document.getElementById("modalVideo").src = "";
-});
-</script>
-
-
-<script>
-  const track = document.querySelector('.slider-track');
-  const slides = document.querySelectorAll('.slide');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  let index = 0;
-
-  function updateSlider() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    index = (index > 0) ? index - 1 : slides.length - 1;
-    updateSlider();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    index = (index < slides.length - 1) ? index + 1 : 0;
-    updateSlider();
-  });
-</script>
-<section style="margin-top: -25px;">
+<section style="margin-top: -35px;">
   <div style="position: relative; margin-bottom: 40px; text-align: center;">
   <h2 style="font-size: 28px; font-weight: 600; color: #1c1d1f; margin: 0; padding-bottom: 12px; display: inline-block; border-bottom: 4px solid #2ecc71;">
     <span style="font-size: 28px; margin-right: 8px;">🎁</span> Bonos Exclusivos del Curso
@@ -922,7 +887,64 @@ document.getElementById("closeModal").addEventListener("click", function() {
 <div class="boton-wrapper">
   <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" style="width: 310px;" class="boton-comprar">Inscríbete ahora y recibe todos los bonos 🎁</a>
 </div>
-<div id="proof-message">🛒 Carlos Vásquez acaba de comprar Curso</div>
+
+<div class="modal-overlay" id="videoModal">
+  <div class="modal-content">
+    <span class="modal-close" id="closeModal">✖</span>
+    <iframe id="modalVideo" src="" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll(".modulo-titulo").forEach(button => {
+  button.addEventListener("click", () => {
+    const lecciones = button.nextElementSibling;
+    const isOpen = lecciones.style.display === "block";
+    document.querySelectorAll(".modulo-lecciones").forEach(ul => ul.style.display = "none");
+    if (!isOpen) {
+      lecciones.style.display = "block";
+    }
+  });
+});
+</script>
+<script>
+document.querySelectorAll(".vista-previa").forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const videoUrl = this.getAttribute("data-video");
+    document.getElementById("modalVideo").src = videoUrl;
+    document.getElementById("videoModal").style.display = "flex";
+  });
+});
+
+document.getElementById("closeModal").addEventListener("click", function() {
+  document.getElementById("videoModal").style.display = "none";
+  document.getElementById("modalVideo").src = "";
+});
+</script>
+<script>
+  const track = document.querySelector('.slider-track');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let index = 0;
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    index = (index > 0) ? index - 1 : slides.length - 1;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    index = (index < slides.length - 1) ? index + 1 : 0;
+    updateSlider();
+  });
+</script>
+
+<div id="proof-message">🛒</div>
 <script>
   const Clientes = [
     "Carlos Vásquez", "María López", "Joselyn Díaz", "Luis Fernández",
@@ -941,14 +963,14 @@ document.getElementById("closeModal").addEventListener("click", function() {
     "Violeta Mansilla", "Lucas Fajardo", "Abril Requena", "Renata Gallardo"
   ];
 
-  const pais = [
-    "Argentina", "Brasil", "Chile", "Colombia", "México", "Perú", "Uruguay", "Paraguay",
-    "Ecuador", "Bolivia", "Venezuela", "Guatemala", "Honduras", "El Salvador", "Nicaragua", "Costa Rica",
-    "Panamá", "Cuba", "República Dominicana", "España"
-  ];
+ const pais = [
+  "Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza", "Málaga", "Murcia", "Palma de Mallorca",
+  "Las Palmas de Gran Canaria", "Bilbao", "Alicante", "Córdoba", "Valladolid", "Vigo", "Gijón", "Hospitalet de Llobregat",
+  "A Coruña", "Granada", "Vitoria-Gasteiz", "Elche"
+];
 
   const productos = [
-    { nombre: "El CURSO", icono: "📘" },
+    { nombre: "El CURSO"},
   
   ];
 
