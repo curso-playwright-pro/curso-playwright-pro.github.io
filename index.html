@@ -55,34 +55,74 @@
 <!--FIN MAPA DE CALOR-->
 </head>
 <body>
-   <!---
-<div id="popup" class="popup" style="display: flex;">
+  <div id="popup" class="popup" style="display: none;">
   <div class="popup-content">
    
     <span class="close-btn" id="cerrarPopup">&times;</span>
    
-    <img src="img/popup.png" alt="Curso Playwright" class="popup-img" loading="eager" />
+    <img src="img/popup.webp" alt="Curso Playwright" class="popup-img" loading="eager" />
    
-    <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="popup-btn">¡Inscríbete ahora!</a>
+    <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="popup-btn">¡Sí, quiero el descuento!</a>
   </div>
 </div>
--->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  let popupCerrado = false; // 👈 variable de control
+document.addEventListener('DOMContentLoaded', function() {
+  let popupCerrado = false; 
+  let popupMostrado = false;
+  let lastScrollTop = 0;
+  let maxScroll = 0; // Para detectar si bajó bastante
 
-  setTimeout(function() {
-    if (!popupCerrado) {
-      document.getElementById("popup").style.display = "flex";
+  const popup = document.getElementById("popup");
+  const cerrarPopup = document.getElementById("cerrarPopup");
+
+  // -------- EXIT INTENT DESKTOP (mouse sale arriba) --------
+  document.addEventListener("mouseout", function(e) {
+    if (popupMostrado || popupCerrado) return;
+    if (e.clientY < 10) { 
+      mostrarPopup();
     }
-  }, 2000); // espera 2 segundos antes de mostrar el popup
-
-  document.getElementById("cerrarPopup").addEventListener("click", function() {
-    document.getElementById("popup").style.display = "none";
-    popupCerrado = true; // 👈 evita que se vuelva a mostrar
   });
-});
 
+  // -------- EXIT INTENT MOBILE --------
+  document.addEventListener("scroll", function() {
+    if (popupMostrado || popupCerrado) return;
+
+    const scrollActual = window.pageYOffset;
+    const altoPagina = document.body.offsetHeight;
+    const porcentaje = (scrollActual / altoPagina) * 100;
+
+    // Guardar el punto más bajo al que llegó el usuario
+    if (scrollActual > maxScroll) {
+      maxScroll = scrollActual;
+    }
+
+    // 1️⃣ Si vio 40% y hace scroll hacia ARRIBA → popups
+    if (scrollActual < lastScrollTop && porcentaje > 40) {
+      mostrarPopup();
+    }
+
+    // 2️⃣ Si regresó al INICIO (0px) después de bajar bastante → popups
+    if (scrollActual === 0 && maxScroll > 350) {
+      mostrarPopup();
+    }
+
+    lastScrollTop = scrollActual <= 0 ? 0 : scrollActual;
+  });
+
+  // -------- Cerrar popup --------
+  cerrarPopup.addEventListener("click", function() {
+    popup.style.display = "none";
+    popupCerrado = true;
+  });
+
+  // -------- Función para mostrar el popup --------
+  function mostrarPopup() {
+    if (!popupMostrado && !popupCerrado) {
+      popup.style.display = "flex";
+      popupMostrado = true;
+    }
+  }
+});
 </script>
   <!-- FIN POP UPS-->
   <!--NUEVO REALIZAR COMPRA-->
