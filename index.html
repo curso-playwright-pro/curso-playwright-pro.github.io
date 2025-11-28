@@ -65,51 +65,81 @@
     <a href="https://pay.hotmart.com/Y102328378V?off=oymffq0q" class="popup-btn">¡Sí, quiero el descuento!</a>
   </div>
 </div>
-<script>
+<script> 
 document.addEventListener('DOMContentLoaded', function() {
   let popupCerrado = false; 
   let popupMostrado = false;
   let lastScrollTop = 0;
   let maxScroll = 0;
 
+  let lastMouseY = 200;  // posición previa del mouse
+  let lastMouseTime = Date.now();
+
   const popup = document.getElementById("popup");
   const cerrarPopup = document.getElementById("cerrarPopup");
 
-  // -------- EXIT INTENT DESKTOP --------
-  document.addEventListener("mouseout", function(e) {
+  // ==========================================
+  // DETECTOR DE INTENTO REAL DE SALIR EN PC
+  // ==========================================
+  document.addEventListener("mousemove", function(e) {
     if (popupMostrado || popupCerrado) return;
-    if (e.clientY < 10) {
+
+    const now = Date.now();
+    const dy = lastMouseY - e.clientY;
+    const dt = now - lastMouseTime;
+    const velocidad = dy / dt; // px/ms
+
+    lastMouseY = e.clientY;
+    lastMouseTime = now;
+
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const porcentajeMax = (maxScroll / scrollHeight) * 100;
+
+    // 🔥 Caso 1: llegó al 80% y mueve hacia arriba → popup
+    if (porcentajeMax >= 80 && e.clientY < 10) {
       mostrarPopup();
+      return;
+    }
+
+    // 🔥 Caso 2: no llegó al 80% pero realmente quiere irse (velocidad alta)
+    if (e.clientY < 5 && velocidad > 0.4) {
+      mostrarPopup();
+      return;
     }
   });
 
-  // -------- MOBILE EXIT INTENT --------
+  // ==========================================
+  // SCROLL EXIT-INTENT (MOBILE & PC)
+  // ==========================================
   document.addEventListener("scroll", function() {
     if (popupMostrado || popupCerrado) return;
 
     const scrollActual = window.pageYOffset;
     const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const porcentaje = (scrollActual / totalScroll) * 100;
 
-    // Guardar la profundidad máxima
+    // Registrar máxima profundidad
     if (scrollActual > maxScroll) {
       maxScroll = scrollActual;
     }
 
-    // 1️⃣ Si vio 40% REAL y hace scroll hacia arriba → popup
-    if (scrollActual < lastScrollTop && porcentaje > 40) {
+    const porcentajeMax = (maxScroll / totalScroll) * 100;
+
+    // 🔥 Scroll hacia arriba + vio 80%
+    if (scrollActual < lastScrollTop && porcentajeMax >= 80) {
       mostrarPopup();
     }
 
-    // 2️⃣ Si regresó al inicio después de bajar mínimo 25% → popup
-    if (scrollActual === 0 && (maxScroll / totalScroll) * 100 > 25) {
+    // 🔥 Volvió arriba + vio 80%
+    if (scrollActual === 0 && porcentajeMax >= 80) {
       mostrarPopup();
     }
 
     lastScrollTop = scrollActual <= 0 ? 0 : scrollActual;
   });
 
-  // -------- Cerrar popup --------
+  // ==========================================
+  // CERRAR POPUP
+  // ==========================================
   cerrarPopup.addEventListener("click", function() {
     popup.style.display = "none";
     popupCerrado = true;
@@ -121,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
       popupMostrado = true;
     }
   }
+
 });
 </script>
   <!-- FIN POP UPS-->
