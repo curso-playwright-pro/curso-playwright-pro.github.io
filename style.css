@@ -171,7 +171,7 @@
   }
 
   .precio-descuento {
-    font-size: 30px;
+    font-size: 22px;
     font-weight: bold;
     color: #6a00ff;
   }
@@ -193,7 +193,7 @@
   transition: background-color 0.3s ease;
   margin-left: auto;
   margin-right: 26px;
-  width: 260px;
+  width: 200px;
   height: 40px;
   text-align: center;
   text-decoration: none;
@@ -406,15 +406,93 @@
   }
 }
 
+@media (max-width: 950px) {
+  .hero-text{
+    margin-top: 67px;
+  }
 
-@media (max-width: 600px) {
   .hero-text h1 {
-    font-size: 1.6rem;
+    font-size: 23px !important;
+    line-height: 1.5;
+    margin: 0 auto;
+    letter-spacing: 0.02em;
+    word-spacing: 0.05em;
+  }
+
+  .hero-text h2 {
+    text-align:center !important;
   }
 
   .hero-text p {
     font-size: 1rem;
   }
+ 
+}
+
+@media (max-width: 1000px) {
+  .hero-text{
+    margin-top: 67px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .hero-text{
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero-text{
+    margin-top: 67px;
+  }
+
+  .btn-cesta{
+  width: 210px !important;
+  font-size: 18px !important;
+ }
+}
+
+@media (max-width: 850px) {
+  .hero-text{
+    margin-top: 67px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-text h1 {
+    font-size: 22px !important;
+  }
+
+  .hero-text h2 {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 380px) {
+.premium-badge{
+  width: 250px !important;
+ }
+
+.countdown-wrapper{
+  width: 100px;
+ }
+
+ .boton-comprar{
+  width: 78% !important;
+ }
+
+ .btn-cesta{
+  width: 180px !important;
+  font-size: 18px !important;
+ }
+
+}
+
+@media (max-width: 350px) {
+ .btn-cesta{
+  width: 150px !important;
+  font-size: 16px !important;
+ }
 }
 
 .whatsapp-btn img {
