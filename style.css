@@ -1359,11 +1359,97 @@ footer p{
 }
 
 .slide img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 280px;      /* Buen tamaño para PC */
+  height: 280px;
   object-fit: cover;
-  margin-bottom: 1rem;
+  
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .slide img {
+    width: 340px !important;
+    height: 340px !important;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .dirigido {
+  margin-top: 670px !important;
+
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .dirigido{
+  margin-top: 480px;
+  }
+  .slide img {
+    width: 340px !important;
+    height: 640px !important;
+  }
+   .dirigido{
+  margin-top: 650px !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 850px) {
+  .dirigido{
+  margin-top: 480px;
+  }
+  .slide img {
+    width: 340px !important;
+    height: 640px !important;
+  }
+   .dirigido{
+  margin-top: 650px !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1030px) {
+  .dirigido{
+  margin-top: 480px;
+  }
+  .slide img {
+    width: 340px !important;
+    height: 640px !important;
+  }
+   .dirigido{
+  margin-top: 650px !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1300px) {
+  .dirigido{
+  margin-top: 480px;
+  }
+  .slide img {
+    width: 340px !important;
+    height: 640px !important;
+  }
+   .dirigido{
+  margin-top: 650px !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 400px) {
+  .dirigido{
+  margin-top: 680px !important;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .slide img {
+    width: 340px !important;
+    height: 640px !important;
+  }
 }
 
 .slide p {
@@ -1538,4 +1624,38 @@ button.next {
 #contador-numero {
   font-weight: bold;
   color: orange;
+}
+
+.section-title {
+    font-size: 26px;
+    text-align: center;
+    font-weight: 900;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 5px;
+    background: #16a34a; /* verde fuerte */
+    border-radius: 2px;
+    animation: expandLine 0.6s ease-out forwards;
+}
+
+@keyframes expandLine {
+    from { width: 0; opacity: 0; }
+    to   { width: 140px; opacity: 1; }
+}
+
+.icon {
+    font-size: 2rem;
+    margin-right: 10px;
 }
