@@ -1373,39 +1373,20 @@ footer p{
   }
 }
 
-/* Móviles */
-@media (max-width: 480px) {
-  .dirigido {
-  margin-top: 670px !important;
-
-  }
-}
-
 /* Tablets */
 @media (max-width: 768px) {
-  .dirigido{
-  margin-top: 480px;
-  }
+
   .slide img {
     width: 340px !important;
-    height: 640px !important;
-  }
-   .dirigido{
-  margin-top: 650px !important;
+    height: 570px !important;
   }
 }
 
 /* Tablets */
 @media (max-width: 850px) {
-  .dirigido{
-  margin-top: 480px;
-  }
   .slide img {
     width: 340px !important;
-    height: 640px !important;
-  }
-   .dirigido{
-  margin-top: 650px !important;
+    height: 570px !important;
   }
 }
 
@@ -1416,7 +1397,7 @@ footer p{
   }
   .slide img {
     width: 340px !important;
-    height: 640px !important;
+    height: 570px !important;
   }
    .dirigido{
   margin-top: 650px !important;
@@ -1430,17 +1411,10 @@ footer p{
   }
   .slide img {
     width: 340px !important;
-    height: 640px !important;
+    height: 570px !important;
   }
    .dirigido{
-  margin-top: 650px !important;
-  }
-}
-
-/* Tablets */
-@media (max-width: 400px) {
-  .dirigido{
-  margin-top: 680px !important;
+  margin-top: 600px !important;
   }
 }
 
@@ -1448,7 +1422,17 @@ footer p{
 @media (max-width: 480px) {
   .slide img {
     width: 340px !important;
-    height: 640px !important;
+    height: 570px !important;
+  }
+}
+
+@media (min-width: 1301px) {
+  .slide img {
+   width: 340px ;
+   height: 570px ;
+  }
+  .dirigido{
+    margin-top: 590px !important;
   }
 }
 
@@ -1759,7 +1743,7 @@ button.next {
 
   .hero-beneficio {
    text-align: left !important;
-    font-size: 18px !important;
+    font-size: 20px !important;
     color: #E0E0E0;
    
   }
@@ -1768,7 +1752,7 @@ button.next {
 @media (max-width: 479px) {
    .hero-beneficio {
    text-align: left !important;
-    font-size: 14px !important;
+    font-size: 20px !important;
     color: #E0E0E0;
   }
 }
@@ -1789,6 +1773,10 @@ button.next {
   }
 
   .hero-beneficio {
-    font-size: 18px;
+    font-size: 20px;
   }
+}
+.image-linkedLn:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease; 
 }
